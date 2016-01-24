@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2tM-RP-SEX">
+                                <rect key="frame" x="250" y="38" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.78018935869999995" green="1" blue="0.69308354640000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="7zp-Gc-zYP"/>
+                                    <constraint firstAttribute="width" constant="100" id="Q2h-e5-joQ"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUm-8n-TDp">
+                                <rect key="frame" x="476" y="152" width="64" height="31"/>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.38823529410000002" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="Sf8-b1-ZE3"/>
+                                    <constraint firstAttribute="height" constant="31" id="t4A-vr-hyv"/>
+                                </constraints>
+                                <size key="titleShadowOffset" width="0.0" height="2.2250738585072014e-308"/>
+                                <state key="normal" title="Play"/>
+                                <state key="selected" title="Pause"/>
+                                <connections>
+                                    <action selector="changedPlayStateAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Whk-he-gU6"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="wLX-gd-Kcz">
+                                <rect key="frame" x="58" y="203" width="484" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="IvU-72-b4f"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="seekAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="xEE-A9-hpw"/>
+                                </connections>
+                            </slider>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="4" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="WHL-q3-RG0">
+                                <rect key="frame" x="357" y="153" width="94" height="29"/>
+                                <connections>
+                                    <action selector="changedVolume:" destination="BYZ-38-t0r" eventType="valueChanged" id="dnS-UD-MHA"/>
+                                </connections>
+                            </stepper>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2tM-RP-SEX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8tN-Fy-Z3u"/>
+                            <constraint firstItem="wLX-gd-Kcz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="By2-Qc-ava"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TUm-8n-TDp" secondAttribute="trailing" constant="40" id="NM2-2N-X1D"/>
+                            <constraint firstItem="TUm-8n-TDp" firstAttribute="centerY" secondItem="WHL-q3-RG0" secondAttribute="centerY" id="Sar-ch-Zwd"/>
+                            <constraint firstItem="wLX-gd-Kcz" firstAttribute="bottom" secondItem="TUm-8n-TDp" secondAttribute="bottom" constant="50" id="YYT-oY-ExX"/>
+                            <constraint firstItem="TUm-8n-TDp" firstAttribute="leading" secondItem="WHL-q3-RG0" secondAttribute="trailing" constant="25" id="ncE-o8-hGt"/>
+                            <constraint firstItem="TUm-8n-TDp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="132" id="p8D-N3-dbC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wLX-gd-Kcz" secondAttribute="trailing" constant="40" id="tLE-h0-9zt"/>
+                            <constraint firstItem="2tM-RP-SEX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="18" id="zaY-We-ofY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="albumImage" destination="2tM-RP-SEX" id="rFK-w5-Nq4"/>
+                        <outlet property="durationSlider" destination="wLX-gd-Kcz" id="0TI-1d-Mt2"/>
+                        <outlet property="playOrPauseBtn" destination="TUm-8n-TDp" id="Hnr-8t-BV5"/>
+                        <outlet property="volumeSteper" destination="WHL-q3-RG0" id="XTl-eB-2WQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="102" y="75"/>
+        </scene>
+    </scenes>
+</document>
