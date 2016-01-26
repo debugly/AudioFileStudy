@@ -6,6 +6,41 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--本地播放列表-->
+        <scene sceneID="Nb7-dg-oxa">
+            <objects>
+                <tableViewController id="gtp-Yz-Yc5" customClass="QLAudioListViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="G0O-Fp-Mna">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="gtp-Yz-Yc5" id="cQI-fm-oAC"/>
+                            <outlet property="delegate" destination="gtp-Yz-Yc5" id="T57-sr-XMi"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="本地播放列表" id="wJD-C4-o1s"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DaN-Hn-L5U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-193" y="105"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tcO-kt-E1y">
+            <objects>
+                <navigationController id="GBq-a5-lS0" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vm9-fb-neW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="gtp-Yz-Yc5" kind="relationship" relationship="rootViewController" id="Wgv-yG-s2i"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PxW-bm-BZ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1013" y="105"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -78,7 +113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="102" y="75"/>
+            <point key="canvasLocation" x="-784" y="-292"/>
         </scene>
     </scenes>
 </document>

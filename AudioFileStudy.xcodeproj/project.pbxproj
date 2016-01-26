@@ -14,14 +14,20 @@
 		B418E8141C527D4D007025DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B418E8131C527D4D007025DB /* Assets.xcassets */; };
 		B418E8171C527D4D007025DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B418E8151C527D4D007025DB /* LaunchScreen.storyboard */; };
 		B418E81F1C527DDA007025DB /* zhengjiu.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B418E81E1C527DDA007025DB /* zhengjiu.mp3 */; };
-		B418E8221C527EBA007025DB /* QLAudioFile.m in Sources */ = {isa = PBXBuildFile; fileRef = B418E8211C527EBA007025DB /* QLAudioFile.m */; };
 		B418E8241C531782007025DB /* xiangmengyiyangziyou.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B418E8231C531781007025DB /* xiangmengyiyangziyou.mp3 */; };
-		B418E82A1C53BE12007025DB /* QLPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B418E8281C53BE12007025DB /* QLPlayer.cpp */; };
 		B418E82D1C54ABF6007025DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B418E82C1C54ABF6007025DB /* Foundation.framework */; };
 		B418E82F1C54ABFB007025DB /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B418E82E1C54ABFB007025DB /* AudioToolbox.framework */; };
 		B418E8311C54AC00007025DB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B418E8301C54AC00007025DB /* AVFoundation.framework */; };
 		B418E8331C54AC16007025DB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B418E8321C54AC16007025DB /* UIKit.framework */; };
-		B418E83A1C5519D3007025DB /* NSTimer+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = B418E8391C5519D3007025DB /* NSTimer+Util.m */; };
+		B4588B6D1C57B2CE00F7B423 /* NSTimer+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = B4588B5A1C57B2CE00F7B423 /* NSTimer+Util.m */; };
+		B4588B6E1C57B2CE00F7B423 /* QLAudioListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4588B5E1C57B2CE00F7B423 /* QLAudioListCell.m */; };
+		B4588B6F1C57B2CE00F7B423 /* QLAudioListDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4588B601C57B2CE00F7B423 /* QLAudioListDataController.m */; };
+		B4588B701C57B2CE00F7B423 /* QLAudioListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B4588B621C57B2CE00F7B423 /* QLAudioListModel.m */; };
+		B4588B711C57B2CE00F7B423 /* QLAudioListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4588B641C57B2CE00F7B423 /* QLAudioListViewController.m */; };
+		B4588B721C57B2CE00F7B423 /* QLAudioFile.m in Sources */ = {isa = PBXBuildFile; fileRef = B4588B6A1C57B2CE00F7B423 /* QLAudioFile.m */; };
+		B4588B761C57B2E800F7B423 /* CommFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = B4588B751C57B2E800F7B423 /* CommFunctions.m */; };
+		B4588B7A1C57BF9B00F7B423 /* QLAududioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = B4588B791C57BF9B00F7B423 /* QLAududioPlayer.m */; };
+		B4588B801C57C45A00F7B423 /* QLPrivateAudioPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4588B7E1C57C45A00F7B423 /* QLPrivateAudioPlayer.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,18 +42,31 @@
 		B418E8161C527D4D007025DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B418E8181C527D4D007025DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B418E81E1C527DDA007025DB /* zhengjiu.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = zhengjiu.mp3; sourceTree = "<group>"; };
-		B418E8201C527EBA007025DB /* QLAudioFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLAudioFile.h; sourceTree = "<group>"; };
-		B418E8211C527EBA007025DB /* QLAudioFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLAudioFile.m; sourceTree = "<group>"; };
 		B418E8231C531781007025DB /* xiangmengyiyangziyou.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = xiangmengyiyangziyou.mp3; sourceTree = "<group>"; };
-		B418E8281C53BE12007025DB /* QLPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QLPlayer.cpp; sourceTree = "<group>"; };
-		B418E8291C53BE12007025DB /* QLPlayer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = QLPlayer.hpp; sourceTree = "<group>"; };
-		B418E82B1C53C52A007025DB /* QLAudioDebugMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QLAudioDebugMacros.h; sourceTree = "<group>"; };
 		B418E82C1C54ABF6007025DB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B418E82E1C54ABFB007025DB /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		B418E8301C54AC00007025DB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		B418E8321C54AC16007025DB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		B418E8381C5519D2007025DB /* NSTimer+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Util.h"; sourceTree = "<group>"; };
-		B418E8391C5519D3007025DB /* NSTimer+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Util.m"; sourceTree = "<group>"; };
+		B4588B591C57B2CE00F7B423 /* NSTimer+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Util.h"; sourceTree = "<group>"; };
+		B4588B5A1C57B2CE00F7B423 /* NSTimer+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Util.m"; sourceTree = "<group>"; };
+		B4588B5D1C57B2CE00F7B423 /* QLAudioListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLAudioListCell.h; sourceTree = "<group>"; };
+		B4588B5E1C57B2CE00F7B423 /* QLAudioListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLAudioListCell.m; sourceTree = "<group>"; };
+		B4588B5F1C57B2CE00F7B423 /* QLAudioListDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLAudioListDataController.h; sourceTree = "<group>"; };
+		B4588B601C57B2CE00F7B423 /* QLAudioListDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLAudioListDataController.m; sourceTree = "<group>"; };
+		B4588B611C57B2CE00F7B423 /* QLAudioListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLAudioListModel.h; sourceTree = "<group>"; };
+		B4588B621C57B2CE00F7B423 /* QLAudioListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLAudioListModel.m; sourceTree = "<group>"; };
+		B4588B631C57B2CE00F7B423 /* QLAudioListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLAudioListViewController.h; sourceTree = "<group>"; };
+		B4588B641C57B2CE00F7B423 /* QLAudioListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLAudioListViewController.m; sourceTree = "<group>"; };
+		B4588B651C57B2CE00F7B423 /* QLLoadListDataInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLLoadListDataInterface.h; sourceTree = "<group>"; };
+		B4588B681C57B2CE00F7B423 /* QLAudioDebugMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLAudioDebugMacros.h; sourceTree = "<group>"; };
+		B4588B691C57B2CE00F7B423 /* QLAudioFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLAudioFile.h; sourceTree = "<group>"; };
+		B4588B6A1C57B2CE00F7B423 /* QLAudioFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLAudioFile.m; sourceTree = "<group>"; };
+		B4588B741C57B2E800F7B423 /* CommFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommFunctions.h; sourceTree = "<group>"; };
+		B4588B751C57B2E800F7B423 /* CommFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommFunctions.m; sourceTree = "<group>"; };
+		B4588B781C57BF9B00F7B423 /* QLAududioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QLAududioPlayer.h; sourceTree = "<group>"; };
+		B4588B791C57BF9B00F7B423 /* QLAududioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QLAududioPlayer.m; sourceTree = "<group>"; };
+		B4588B7E1C57C45A00F7B423 /* QLPrivateAudioPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QLPrivateAudioPlayer.cpp; sourceTree = "<group>"; };
+		B4588B7F1C57C45A00F7B423 /* QLPrivateAudioPlayer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = QLPrivateAudioPlayer.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,13 +103,11 @@
 		B418E8061C527D4D007025DB /* AudioFileStudy */ = {
 			isa = PBXGroup;
 			children = (
-				B418E8271C53BD13007025DB /* QLPlayer */,
-				B418E8201C527EBA007025DB /* QLAudioFile.h */,
-				B418E8211C527EBA007025DB /* QLAudioFile.m */,
+				B4588B581C57B2CE00F7B423 /* libs */,
+				B4588B5B1C57B2CE00F7B423 /* Mudles */,
+				B4588B671C57B2CE00F7B423 /* QLPlayer */,
 				B418E80A1C527D4D007025DB /* AppDelegate.h */,
 				B418E80B1C527D4D007025DB /* AppDelegate.m */,
-				B418E8381C5519D2007025DB /* NSTimer+Util.h */,
-				B418E8391C5519D3007025DB /* NSTimer+Util.m */,
 				B418E80D1C527D4D007025DB /* ViewController.h */,
 				B418E80E1C527D4D007025DB /* ViewController.m */,
 				B418E8101C527D4D007025DB /* Main.storyboard */,
@@ -113,16 +130,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B418E8271C53BD13007025DB /* QLPlayer */ = {
-			isa = PBXGroup;
-			children = (
-				B418E8281C53BE12007025DB /* QLPlayer.cpp */,
-				B418E8291C53BE12007025DB /* QLPlayer.hpp */,
-				B418E82B1C53C52A007025DB /* QLAudioDebugMacros.h */,
-			);
-			path = QLPlayer;
-			sourceTree = "<group>";
-		};
 		B418E8341C54AC23007025DB /* frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +140,63 @@
 			);
 			name = frameworks;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		B4588B581C57B2CE00F7B423 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				B4588B591C57B2CE00F7B423 /* NSTimer+Util.h */,
+				B4588B5A1C57B2CE00F7B423 /* NSTimer+Util.m */,
+				B4588B741C57B2E800F7B423 /* CommFunctions.h */,
+				B4588B751C57B2E800F7B423 /* CommFunctions.m */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		B4588B5B1C57B2CE00F7B423 /* Mudles */ = {
+			isa = PBXGroup;
+			children = (
+				B4588B771C57BCF800F7B423 /* AudioPlayer */,
+				B4588B5C1C57B2CE00F7B423 /* AudioList */,
+			);
+			path = Mudles;
+			sourceTree = "<group>";
+		};
+		B4588B5C1C57B2CE00F7B423 /* AudioList */ = {
+			isa = PBXGroup;
+			children = (
+				B4588B5D1C57B2CE00F7B423 /* QLAudioListCell.h */,
+				B4588B5E1C57B2CE00F7B423 /* QLAudioListCell.m */,
+				B4588B5F1C57B2CE00F7B423 /* QLAudioListDataController.h */,
+				B4588B601C57B2CE00F7B423 /* QLAudioListDataController.m */,
+				B4588B611C57B2CE00F7B423 /* QLAudioListModel.h */,
+				B4588B621C57B2CE00F7B423 /* QLAudioListModel.m */,
+				B4588B631C57B2CE00F7B423 /* QLAudioListViewController.h */,
+				B4588B641C57B2CE00F7B423 /* QLAudioListViewController.m */,
+				B4588B651C57B2CE00F7B423 /* QLLoadListDataInterface.h */,
+			);
+			path = AudioList;
+			sourceTree = "<group>";
+		};
+		B4588B671C57B2CE00F7B423 /* QLPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				B4588B7E1C57C45A00F7B423 /* QLPrivateAudioPlayer.cpp */,
+				B4588B7F1C57C45A00F7B423 /* QLPrivateAudioPlayer.hpp */,
+				B4588B681C57B2CE00F7B423 /* QLAudioDebugMacros.h */,
+				B4588B691C57B2CE00F7B423 /* QLAudioFile.h */,
+				B4588B6A1C57B2CE00F7B423 /* QLAudioFile.m */,
+			);
+			path = QLPlayer;
+			sourceTree = "<group>";
+		};
+		B4588B771C57BCF800F7B423 /* AudioPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				B4588B781C57BF9B00F7B423 /* QLAududioPlayer.h */,
+				B4588B791C57BF9B00F7B423 /* QLAududioPlayer.m */,
+			);
+			path = AudioPlayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,12 +277,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4588B711C57B2CE00F7B423 /* QLAudioListViewController.m in Sources */,
+				B4588B7A1C57BF9B00F7B423 /* QLAududioPlayer.m in Sources */,
+				B4588B6D1C57B2CE00F7B423 /* NSTimer+Util.m in Sources */,
+				B4588B761C57B2E800F7B423 /* CommFunctions.m in Sources */,
+				B4588B801C57C45A00F7B423 /* QLPrivateAudioPlayer.cpp in Sources */,
+				B4588B6F1C57B2CE00F7B423 /* QLAudioListDataController.m in Sources */,
+				B4588B721C57B2CE00F7B423 /* QLAudioFile.m in Sources */,
 				B418E80F1C527D4D007025DB /* ViewController.m in Sources */,
+				B4588B6E1C57B2CE00F7B423 /* QLAudioListCell.m in Sources */,
+				B4588B701C57B2CE00F7B423 /* QLAudioListModel.m in Sources */,
 				B418E80C1C527D4D007025DB /* AppDelegate.m in Sources */,
 				B418E8091C527D4D007025DB /* main.m in Sources */,
-				B418E8221C527EBA007025DB /* QLAudioFile.m in Sources */,
-				B418E83A1C5519D3007025DB /* NSTimer+Util.m in Sources */,
-				B418E82A1C53BE12007025DB /* QLPlayer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +443,7 @@
 				B418E81D1C527D4D007025DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

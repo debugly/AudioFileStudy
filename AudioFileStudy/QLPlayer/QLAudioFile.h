@@ -21,6 +21,6 @@
 
 - (NSData *)readAlbumImageData;
 
-+ (NSArray *)fileTypes;
++ (NSArray *)audioFileExtensions;
 
 @end

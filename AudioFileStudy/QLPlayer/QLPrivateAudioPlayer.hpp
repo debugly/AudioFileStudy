@@ -1,13 +1,13 @@
 //
-//  QLPlayer.hpp
+//  QLPrivateAudioPlayer.hpp
 //  AudioFileStudy
 //
-//  Created by xuqianlong on 16/1/23.
+//  Created by xuqianlong on 16/1/26.
 //  Copyright © 2016年 Debugly. All rights reserved.
 //
 
-#ifndef QLPlayer_hpp
-#define QLPlayer_hpp
+#ifndef QLPrivateAudioPlayer_hpp
+#define QLPrivateAudioPlayer_hpp
 
 #include <stdio.h>
 #include <AudioToolbox/AudioFormat.h>
@@ -31,9 +31,9 @@ struct QLAudioFileInfo{
     bool                            mDone;
     
     QLAudioFileInfo()
-        : mChannelLayout(NULL),mPacketDesc(NULL){
+    : mChannelLayout(NULL),mPacketDesc(NULL){
         
-        }
+    }
     ~QLAudioFileInfo()
     {
         delete [] mChannelLayout;
@@ -51,13 +51,13 @@ enum QLAudioPlayState{
 
 typedef enum QLAudioPlayState QLAudioPlayState;
 
-class QLAudioPlayer
+class QLPrivateAudioPlayer
 {
 public:
-    QLAudioPlayer();
-    QLAudioPlayer(const char *filePath);
+    QLPrivateAudioPlayer();
+    QLPrivateAudioPlayer(const char *filePath);
     
-    ~QLAudioPlayer(){
+    ~QLPrivateAudioPlayer(){
         delete []filePath;
     }
     void preparePlay();
@@ -86,4 +86,4 @@ private:
     AudioQueueParameterValue _volume;
 };
 
-#endif /* QLPlayer_hpp */
+#endif /* QLPrivateAudioPlayer_hpp */

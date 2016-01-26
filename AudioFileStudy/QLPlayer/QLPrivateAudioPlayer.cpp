@@ -1,12 +1,12 @@
 //
-//  QLPlayer.cpp
+//  QLPrivateAudioPlayer.cpp
 //  AudioFileStudy
 //
-//  Created by xuqianlong on 16/1/23.
+//  Created by xuqianlong on 16/1/26.
 //  Copyright © 2016年 Debugly. All rights reserved.
 //
-
-#include "QLPlayer.hpp"
+//底层私有的音乐播放器
+#include "QLPrivateAudioPlayer.hpp"
 #include "QLAudioDebugMacros.h"
 
 static void QLReadToBufferCallback(void *               inUserData,
@@ -56,7 +56,7 @@ static void CalculateBytesForTime(AudioStreamBasicDescription & inDesc, UInt32 i
     static const int minBufferSize = 0x4000;//4x2(12)= 16k;
     
     if (inDesc.mFramesPerPacket) {
-//        float sum = 238 * inDesc.mSampleRate / inDesc.mFramesPerPacket;
+        //        float sum = 238 * inDesc.mSampleRate / inDesc.mFramesPerPacket;
         Float64 numPacketsFoTime = inDesc.mSampleRate / inDesc.mFramesPerPacket * inSeconds;
         *outBufferSize = numPacketsFoTime * inMaxPacketSize;
     }else{
@@ -73,12 +73,12 @@ static void CalculateBytesForTime(AudioStreamBasicDescription & inDesc, UInt32 i
     *outNumPackets = *outBufferSize / inMaxPacketSize;
 }
 
-QLAudioPlayer::QLAudioPlayer()
+QLPrivateAudioPlayer::QLPrivateAudioPlayer()
 {
-
+    
 }
 
-QLAudioPlayer::QLAudioPlayer(const char *fp)
+QLPrivateAudioPlayer::QLPrivateAudioPlayer(const char *fp)
 {
     size_t fplen = 0;
     if ((fplen = strlen(fp))) {
@@ -87,11 +87,9 @@ QLAudioPlayer::QLAudioPlayer(const char *fp)
         this->filePath = str;
     }
     this->_volume = 0.5;
-    this->readFile();
-    this->createAudioQueue();
 }
 
-void QLAudioPlayer::readFile()
+void QLPrivateAudioPlayer::readFile()
 {
     if (!this->filePath) {
         QLAudioDebugMsg("file path is nil");
@@ -138,7 +136,7 @@ void QLAudioPlayer::readFile()
         
         this->audioFileInfo.mDataFormat = formatList[0].mASBD;
         error = AudioFileGetPropertyInfo(this->audioFileInfo.mAudioFileID, kAudioFilePropertyChannelLayout, &this->audioFileInfo.mChannelLayoutSize, NULL);
-
+        
         if(noErr == error && this->audioFileInfo.mChannelLayoutSize > 0){
             this->audioFileInfo.mChannelLayout = (AudioChannelLayout *)new char[this->audioFileInfo.mChannelLayoutSize];
             if (noErr != AudioFileGetProperty(this->audioFileInfo.mAudioFileID, kAudioFilePropertyChannelLayout, &this->audioFileInfo.mChannelLayoutSize, this->audioFileInfo.mChannelLayout)) {
@@ -186,7 +184,7 @@ void QLAudioPlayer::readFile()
     delete [] formatList;
 }
 
-void QLAudioPlayer::createAudioQueue()
+void QLPrivateAudioPlayer::createAudioQueue()
 {
     UInt32 size;
     //when success,return an audio queue;
@@ -220,7 +218,7 @@ void QLAudioPlayer::createAudioQueue()
     }
 }
 
-void QLAudioPlayer::resetVolume(float v)
+void QLPrivateAudioPlayer::resetVolume(float v)
 {
     if (this->_volume != v) {
         this->_volume = v;
@@ -232,7 +230,7 @@ void QLAudioPlayer::resetVolume(float v)
     }
 }
 
-void QLAudioPlayer::seekTo(float p)
+void QLPrivateAudioPlayer::seekTo(float p)
 {
     AudioQueuePause(this->audioFileInfo.mQueue);
     AudioQueueReset(this->audioFileInfo.mQueue);
@@ -250,8 +248,10 @@ void QLAudioPlayer::seekTo(float p)
     AudioQueueStart(this->audioFileInfo.mQueue, NULL);
 }
 
-void QLAudioPlayer::preparePlay()
+void QLPrivateAudioPlayer::preparePlay()
 {
+    this->readFile();
+    this->createAudioQueue();
     this->audioFileInfo.mDone = false;
     this->audioFileInfo.mCurrentPacket = 0;
     
@@ -278,7 +278,7 @@ void QLAudioPlayer::preparePlay()
             this->audioFileInfo.mPacketDesc = NULL;//constant bit rate formats, like linear PCM;
         }
     }
-
+    
     AudioQueueRef queue = this->audioFileInfo.mQueue;
     for (int i = 0; i < kNumberOfBuffers; i++) {
         if (noErr != AudioQueueAllocateBuffer(queue, bufferByteSize, &this->audioFileInfo.mBuffers[i])) {
@@ -292,7 +292,7 @@ void QLAudioPlayer::preparePlay()
     }
 }
 
-void QLAudioPlayer::play()
+void QLPrivateAudioPlayer::play()
 {
     if (this->audioFileInfo.mDone) {
         //如果播放结束了，就重置；
@@ -305,73 +305,25 @@ void QLAudioPlayer::play()
     }
 }
 
-void QLAudioPlayer::pause()
+void QLPrivateAudioPlayer::pause()
 {
     AudioQueuePause(this->audioFileInfo.mQueue);
 }
 
-void QLAudioPlayer::stop()
+void QLPrivateAudioPlayer::stop()
 {
     AudioQueueDispose(this->audioFileInfo.mQueue, true);
     AudioFileClose(this->audioFileInfo.mAudioFileID);
     //clean;
 }
 
-double QLAudioPlayer::playedProgress()
+double QLPrivateAudioPlayer::playedProgress()
 {
-//    AudioTimeStamp timestamp;
-//    if (noErr == AudioQueueGetCurrentTime(this->audioFileInfo.mQueue, NULL, &timestamp, NULL)) {
-//        double ctime = timestamp.mSampleTime / this->audioFileInfo.mDataFormat.mSampleRate;
-//        return ctime;
-//    }
-//    return 0.0;
+    //    AudioTimeStamp timestamp;
+    //    if (noErr == AudioQueueGetCurrentTime(this->audioFileInfo.mQueue, NULL, &timestamp, NULL)) {
+    //        double ctime = timestamp.mSampleTime / this->audioFileInfo.mDataFormat.mSampleRate;
+    //        return ctime;
+    //    }
+    //    return 0.0;
     return 1.0 * this->audioFileInfo.mCurrentPacket / this->audioFileInfo.mPacketCount;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

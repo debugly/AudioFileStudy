@@ -383,7 +383,7 @@ static SInt64 QLAudioFile_GetSizeFunc(
  aif,
  au
  */
-+ (NSArray *)fileTypes
++ (NSArray *)audioFileExtensions
 {
     OSStatus err;
     NSArray *sAudioExtensions;

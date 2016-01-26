@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "QLAudioFile.h"
 #import <AVFoundation/AVFoundation.h>
-#import "QLPlayer/QLPlayer.hpp"
+#import "QLPlayer/QLPrivateAudioPlayer.hpp"
 #import "NSTimer+Util.h"
 
 @interface ViewController ()
@@ -29,7 +29,7 @@
 
 @implementation ViewController
 {
-    QLAudioPlayer *player;
+    QLPrivateAudioPlayer *player;
     NSThread *playerThread;
 }
 
@@ -61,7 +61,7 @@
     playerThread = [[NSThread alloc]initWithTarget:self selector:@selector(playThreadMain) object:nil];
     [playerThread start];
     
-//    player = new QLAudioPlayer([mp3Path UTF8String]);
+//    player = new QLPrivateAudioPlayer([mp3Path UTF8String]);
 //    player->preparePlay();
 //    player->resetVolume(_volumeSteper.value);
     
@@ -76,7 +76,7 @@
 {
 //    @"xiangmengyiyangziyou" 
     NSString *mp3Path = [[NSBundle mainBundle]pathForResource:@"zhengjiu" ofType:@"mp3"];
-    player = new QLAudioPlayer([mp3Path UTF8String]);
+    player = new QLPrivateAudioPlayer([mp3Path UTF8String]);
     player->preparePlay();
     player->resetVolume(0.3);
     [[NSRunLoop currentRunLoop]addPort:[NSPort port] forMode:NSRunLoopCommonModes];
